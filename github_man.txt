@@ -1,0 +1,10 @@
+git init
+git add .
+git commit -m "First commit"
+git branch -M main              # main branch 이름을 사용 
+git remote add origin https://github.com/TheoKim365/Lot645.git
+git push -u origin main
+
+git status
+git log
+git remote -v                  # remote 원격주소 확인
