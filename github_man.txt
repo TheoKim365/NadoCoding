@@ -13,3 +13,32 @@ git push -u origin main
 git status
 git log
 git remote -v                  # remote 원격주소 확인
+
+# ==============================================================
+# git add 취소하기(파일 상태를 Unstage로 변경하기)
+// 파일들의 상태를 확인한다.
+$ git status
+On branch master
+Changes to be committed:
+(use "git reset HEAD <file>..." to unstage)
+  renamed:    README.md -> README
+  modified:   CONTRIBUTING.md
+
+# git reset HEAD [file] 명령어를 통해 git add를 취소할 수 있다.
+# 뒤에 파일명이 없으면 add한 파일 전체를 취소한다. 
+
+# ==============================================================
+# git commit 취소하기 
+# 1. commit 취소하기
+
+git log   # // commit 목록 확인
+
+// [방법 1] commit을 취소하고 해당 파일들은 staged 상태로 워킹 디렉터리에 보존
+$ git reset --soft HEAD^
+// [방법 2] commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에 보존
+$ git reset --mixed HEAD^ // 기본 옵션
+$ git reset HEAD^ // 위와 동일
+$ git reset HEAD~2 // 마지막 2개의 commit을 취소
+// [방법 3] commit을 취소하고 해당 파일들은 unstaged 상태로 워킹 디렉터리에서 삭제
+$ git reset --hard HEAD^ 
+# ==============================================================

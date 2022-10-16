@@ -8,7 +8,8 @@ ws = wb.active
 # ws['B1'].value = '국어'
 
 # 번호 영어 수학
-# ws.move_range('C1:C11', rows=5, cols=-1)
+# ws.move_range('C1:C11', rows=5, cols=-1)  # Formulae and references will not be updated.
+# ws.insert_cols(2)  # Formulae and references will not be updated.
 
 min_row = ws.min_row
 max_row = ws.max_row
